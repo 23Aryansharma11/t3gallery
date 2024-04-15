@@ -1,6 +1,7 @@
 import "~/styles/globals.css";
 
 import { Inter } from "next/font/google";
+import TopNav from "~/components/TopNav";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>{children}</body>
+
+      <body className={`font-sans ${inter.variable} grid grid-cols-5 grid-rows-5 gap-5`}>
+        <TopNav />
+        <div className="col-span-5 row-span-4 row-start-2">
+        {children}
+        </div>
+        </body>
     </html>
   );
 }
